@@ -1,0 +1,13 @@
+{
+  "PORT":3000,
+  "NODE_PATH":".",
+  "NODE_ENV":"development",
+  "routes": {
+    "home":{
+      "name":"home",
+      "url":"/",
+      "title":"Home",
+      "template":"index.html"
+    }
+  }
+}
