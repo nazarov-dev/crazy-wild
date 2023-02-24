@@ -24,7 +24,7 @@ jobs:
 
     - name: npm install, build
       run: |
-        npm install
+        npm ci
         npm run build --if-present
 
   deploy:
@@ -34,13 +34,15 @@ jobs:
     needs: build
     env:
         PORT: 443
-        
-    strategy:
-      matrix:
-        node-version: [12.19.0]
     
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
     
     - name: www
       run: npm run www --if-present
