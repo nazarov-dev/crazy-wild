@@ -23,8 +23,9 @@ jobs:
         cache: 'npm'
 
     - name: npm install, build
-    - run: npm install
-    - run: npm run build --if-present
+      run: |
+        npm install
+        npm run build --if-present
 
   deploy:
     permissions:
@@ -36,4 +37,4 @@ jobs:
     
     steps:
     - name: www
-    - run: npm run www --if-present
+      run: npm run www --if-present
