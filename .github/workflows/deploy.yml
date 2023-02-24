@@ -31,10 +31,11 @@ jobs:
       contents: none
     runs-on: ubuntu-latest
     needs: build
-    environment: production
-    concurrency: production
-
+    
     steps:
     - uses: actions/checkout@v3
+    
     - name: 'run'
-    - run: npm run www -- --port 443 --if-present
+      run: npm run www --if-present
+      env:
+        PORT: 443
