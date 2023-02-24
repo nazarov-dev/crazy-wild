@@ -36,5 +36,7 @@ jobs:
         PORT: 443
     
     steps:
+    - uses: actions/checkout@v3
+    
     - name: www
       run: npm run www --if-present
