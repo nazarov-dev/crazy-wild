@@ -35,5 +35,6 @@ jobs:
     concurrency: production
 
     steps:
+    - uses: actions/checkout@v3
     - name: 'run'
     - run: npm run www -- --port 443 --if-present
