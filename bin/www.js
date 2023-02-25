@@ -13,6 +13,10 @@ let server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
+console.log(server);
+console.log(`config.get('PORT')`);
+console.log(config.get('PORT'));
+
 server.listen(config.get('PORT'));
 server.on('error', onError);
 server.on('listening', onListening);
@@ -20,6 +24,8 @@ server.on('listening', onListening);
 /**
  * Event listener for HTTP server "error" event.
  */
+
+console.log(123);
 
 function onError(error) {
     if (error.syscall !== 'listen') {
