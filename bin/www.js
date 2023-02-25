@@ -26,9 +26,10 @@ function onError(error) {
         throw error;
     }
 
-    let bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+    let addr = server.address();
+    let bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
